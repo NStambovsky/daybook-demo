@@ -1,19 +1,29 @@
-# Daybook Demo
+# Daybook
 
-A food and movement diary with quick logging, editable nutrition, repeat meals, a weekly view, and CSV export.
+Try the [dummy demo](https://nstambovsky.github.io/daybook-demo/), then clone this repository to run your own private app. MIT licensed: use, modify, and host your own copy.
 
-## Run locally
+- **Root:** a static portfolio demo with fictional data. Edits stay in this tab’s memory and reset on refresh. No account, password, backend, or live data connection.
+- **self-hosted/:** the real password-protected Cloudflare Worker + D1 app, starting with an empty database. You supply your own Cloudflare account and secrets.
 
-Run `npm start` and visit http://localhost:8081. Requires Python 3. No package installation needed. Run `npm test` with Node 20 or newer.
+## Use it yourself
 
-## Public edition
+```sh
+git clone https://github.com/NStambovsky/daybook-demo.git
+cd daybook-demo
+```
 
-All sample meals and activities are fictional and generated at runtime. Edits exist only in memory in the current tab. Refresh or select **Reset demo** to restore the samples. CSV export produces a local download.
+Follow [Cloudflare setup](docs/CLOUDFLARE.md), [phone home-screen instructions](docs/PHONE.md), or give your coding agent [AGENTS.md](AGENTS.md). Neither edition contains the author’s personal records or credentials. Self-hosted records belong in your own private database, never in Git.
 
-No personal records, passwords, tokens, original Git history, private imports, cloud configuration, spreadsheets, or backups are included. This demo has no backend, browser storage, analytics, or external API calls. AI estimates and cross-device sync from the private app are disabled.
+## Try the demo locally
 
-Use fictional information when exploring. The host may retain ordinary access logs; the app does not transmit diary entries. Nutrition values are illustrative and are not medical advice.
+```sh
+npm start
+```
 
-## Deploy
+Open http://localhost:8081. Python 3 required. `npm test` runs the demo checks with Node 22+. The deployed private app needs Node 22+ for the pinned setup tooling.
 
-Serve the repository root on a static host such as GitHub Pages. Relative asset paths support project subdirectories.
+## Features
+
+Food and movement logging, editable nutrition, quick-add usual meals, weekly charts, CSV export, and cross-device sync. Optional Workers AI estimates use your own Cloudflare account and are disabled by default.
+
+The public demo does not save real records. The private app is a personal shared-password tool, not a service with separate user accounts. Hosting and optional AI usage are charged to whoever deploys it under their provider’s current terms.
